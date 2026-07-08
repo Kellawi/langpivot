@@ -1,0 +1,27 @@
+# --- secrets / environment ---
+.env
+*.env
+
+# --- build artifacts ---
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+
+# --- excluded from the public release ---
+# Corpora and the academic paper are NEVER published. These are root-anchored
+# (leading slash) on purpose: the bundled model at langpivot/data/ MUST ship,
+# so we ignore only the top-level data/ (corpora) and paper/ directories.
+/data/
+/paper/
+*.pdf
+
+# Evaluation output containing full model answers — not part of the release.
+quality_results.json
+
+# --- OS cruft ---
+.DS_Store
+
+# Kept intentionally (do NOT ignore): predictor_weights.json, results.json,
+# langpivot/data/predictor_weights.json

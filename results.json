@@ -1,0 +1,261 @@
+{
+  "setup": {
+    "corpus": "Tatoeba parallel pairs (CC-BY 2.0 FR)",
+    "request_en_tokens_in": 400,
+    "request_en_tokens_out": 300,
+    "prices_usd_per_mtok": {
+      "gpt-4o": [
+        2.5,
+        10.0
+      ],
+      "gpt-4o-mini": [
+        0.15,
+        0.6
+      ],
+      "gpt-4-turbo": [
+        10.0,
+        30.0
+      ],
+      "claude-opus-4-8": [
+        5.0,
+        25.0
+      ],
+      "claude-sonnet-5": [
+        3.0,
+        15.0
+      ],
+      "claude-haiku-4-5": [
+        1.0,
+        5.0
+      ],
+      "local-mt": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "languages": {
+    "ja": {
+      "pairs": 60000,
+      "tokenizers": {
+        "cl100k_base": {
+          "pairs": 60000,
+          "src_tokens": 1156045,
+          "en_tokens": 557253,
+          "ratio_corpus": 2.074542443019598,
+          "ratio_median": 2.1,
+          "ratio_p25": 1.75,
+          "ratio_p75": 2.5
+        },
+        "o200k_base": {
+          "pairs": 60000,
+          "src_tokens": 855831,
+          "en_tokens": 543470,
+          "ratio_corpus": 1.574752976245239,
+          "ratio_median": 1.5714285714285714,
+          "ratio_p25": 1.3333333333333333,
+          "ratio_p75": 1.875
+        }
+      },
+      "predictor": {
+        "train": {
+          "r2": 0.6982690987311484,
+          "mae": 1.6858391304954288,
+          "mape_pct": 19.57041232775148,
+          "n": 48000
+        },
+        "test_mape_pct": 19.68878993548123,
+        "test_n": 12000
+      },
+      "simulation": {
+        "gpt-4o+gpt-4o-mini": {
+          "requests": 268,
+          "main_model": "gpt-4o",
+          "translator_model": "gpt-4o-mini",
+          "en_tokens_out_assumed": 300,
+          "cost_always_direct_usd": 1.6941213929011725,
+          "cost_always_pivot_usd": 1.254103783574071,
+          "cost_adaptive_usd": 1.254103783574071,
+          "cost_oracle_usd": 1.254103783574071,
+          "savings_adaptive_pct": 25.973204232642033,
+          "savings_always_pivot_pct": 25.973204232642033,
+          "savings_oracle_pct": 25.973204232642033,
+          "pivoted_fraction": 1.0,
+          "oracle_agreement": 1.0
+        },
+        "gpt-4-turbo+gpt-4o-mini": {
+          "requests": 268,
+          "main_model": "gpt-4-turbo",
+          "translator_model": "gpt-4o-mini",
+          "en_tokens_out_assumed": 300,
+          "cost_always_direct_usd": 5.510384178703515,
+          "cost_always_pivot_usd": 3.67596628357407,
+          "cost_adaptive_usd": 3.67596628357407,
+          "cost_oracle_usd": 3.67596628357407,
+          "savings_adaptive_pct": 33.290199660108776,
+          "savings_always_pivot_pct": 33.290199660108776,
+          "savings_oracle_pct": 33.290199660108776,
+          "pivoted_fraction": 1.0,
+          "oracle_agreement": 1.0
+        },
+        "gpt-4o+local-mt": {
+          "requests": 268,
+          "main_model": "gpt-4o",
+          "translator_model": "local-mt",
+          "en_tokens_out_assumed": 300,
+          "cost_always_direct_usd": 1.6941213929011725,
+          "cost_always_pivot_usd": 1.0752875000000017,
+          "cost_adaptive_usd": 1.0752875000000017,
+          "cost_oracle_usd": 1.0752875000000017,
+          "savings_adaptive_pct": 36.52830874424067,
+          "savings_always_pivot_pct": 36.52830874424067,
+          "savings_oracle_pct": 36.52830874424067,
+          "pivoted_fraction": 1.0,
+          "oracle_agreement": 1.0
+        }
+      }
+    },
+    "ar": {
+      "pairs": 46518,
+      "tokenizers": {
+        "cl100k_base": {
+          "pairs": 46518,
+          "src_tokens": 885849,
+          "en_tokens": 358764,
+          "ratio_corpus": 2.4691691474060944,
+          "ratio_median": 2.4,
+          "ratio_p25": 2.0,
+          "ratio_p75": 2.8333333333333335
+        },
+        "o200k_base": {
+          "pairs": 46518,
+          "src_tokens": 452141,
+          "en_tokens": 347713,
+          "ratio_corpus": 1.3003281441878791,
+          "ratio_median": 1.2727272727272727,
+          "ratio_p25": 1.0909090909090908,
+          "ratio_p75": 1.5
+        }
+      },
+      "predictor": {
+        "train": {
+          "r2": 0.8188392206621672,
+          "mae": 1.1925977579057334,
+          "mape_pct": 16.77555839355889,
+          "n": 37214
+        },
+        "test_mape_pct": 16.755413944920946,
+        "test_n": 9304
+      },
+      "simulation": {
+        "gpt-4o+gpt-4o-mini": {
+          "requests": 173,
+          "main_model": "gpt-4o",
+          "translator_model": "gpt-4o-mini",
+          "en_tokens_out_assumed": 300,
+          "cost_always_direct_usd": 0.9026828068335092,
+          "cost_always_pivot_usd": 0.7975460684100109,
+          "cost_adaptive_usd": 0.7975460684100109,
+          "cost_oracle_usd": 0.7975460684100109,
+          "savings_adaptive_pct": 11.647140903492337,
+          "savings_always_pivot_pct": 11.647140903492337,
+          "savings_oracle_pct": 11.647140903492337,
+          "pivoted_fraction": 1.0,
+          "oracle_agreement": 1.0
+        },
+        "gpt-4-turbo+gpt-4o-mini": {
+          "requests": 173,
+          "main_model": "gpt-4-turbo",
+          "translator_model": "gpt-4o-mini",
+          "en_tokens_out_assumed": 300,
+          "cost_always_direct_usd": 2.9358609205005277,
+          "cost_always_pivot_usd": 2.359578568410011,
+          "cost_adaptive_usd": 2.359578568410011,
+          "cost_oracle_usd": 2.359578568410011,
+          "savings_adaptive_pct": 19.629075344354796,
+          "savings_always_pivot_pct": 19.629075344354796,
+          "savings_oracle_pct": 19.629075344354796,
+          "pivoted_fraction": 1.0,
+          "oracle_agreement": 1.0
+        },
+        "gpt-4o+local-mt": {
+          "requests": 173,
+          "main_model": "gpt-4o",
+          "translator_model": "local-mt",
+          "en_tokens_out_assumed": 300,
+          "cost_always_direct_usd": 0.9026828068335092,
+          "cost_always_pivot_usd": 0.6936775000000003,
+          "cost_adaptive_usd": 0.6936775000000003,
+          "cost_oracle_usd": 0.6936775000000003,
+          "savings_adaptive_pct": 23.153792810862505,
+          "savings_always_pivot_pct": 23.153792810862505,
+          "savings_oracle_pct": 23.153792810862505,
+          "pivoted_fraction": 1.0,
+          "oracle_agreement": 1.0
+        }
+      }
+    }
+  },
+  "breakeven_r": {
+    "gpt-4o+gpt-4o-mini": {
+      "out/in=0.25": 1.1994680851063828,
+      "out/in=0.75": 1.139627659574468,
+      "out/in=2.0": 1.1063829787234045
+    },
+    "gpt-4o+claude-haiku-4-5": {
+      "out/in=0.25": 3.727272727272727,
+      "out/in=0.75": 3.0,
+      "out/in=2.0": 2.5652173913043477
+    },
+    "gpt-4o+local-mt": {
+      "out/in=0.25": 1.0,
+      "out/in=0.75": 1.0,
+      "out/in=2.0": 1.0
+    },
+    "gpt-4-turbo+gpt-4o-mini": {
+      "out/in=0.25": 1.0545058139534886,
+      "out/in=0.75": 1.0411442006269593,
+      "out/in=2.0": 1.0327749453750907
+    },
+    "gpt-4-turbo+claude-haiku-4-5": {
+      "out/in=0.25": 1.4918032786885247,
+      "out/in=0.75": 1.3783783783783783,
+      "out/in=2.0": 1.305084745762712
+    },
+    "gpt-4-turbo+local-mt": {
+      "out/in=0.25": 1.0,
+      "out/in=0.75": 1.0,
+      "out/in=2.0": 1.0
+    },
+    "claude-opus-4-8+gpt-4o-mini": {
+      "out/in=0.25": 1.0856164383561644,
+      "out/in=0.75": 1.0566954643628512,
+      "out/in=2.0": 1.0419384902143523
+    },
+    "claude-opus-4-8+claude-haiku-4-5": {
+      "out/in=0.25": 1.8333333333333333,
+      "out/in=0.75": 1.5526315789473684,
+      "out/in=2.0": 1.4090909090909092
+    },
+    "claude-opus-4-8+local-mt": {
+      "out/in=0.25": 1.0,
+      "out/in=0.75": 1.0,
+      "out/in=2.0": 1.0
+    },
+    "claude-sonnet-5+gpt-4o-mini": {
+      "out/in=0.25": 1.1453488372093021,
+      "out/in=0.75": 1.0961538461538463,
+      "out/in=2.0": 1.0710900473933649
+    },
+    "claude-sonnet-5+claude-haiku-4-5": {
+      "out/in=0.25": 2.6666666666666665,
+      "out/in=0.75": 2.1052631578947367,
+      "out/in=2.0": 1.8181818181818181
+    },
+    "claude-sonnet-5+local-mt": {
+      "out/in=0.25": 1.0,
+      "out/in=0.75": 1.0,
+      "out/in=2.0": 1.0
+    }
+  }
+}

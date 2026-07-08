@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langpivot"
+dynamic = ["version"]
+description = "Cost-aware LLM language-pivot router: decide per request whether to translate Japanese/Arabic through English to cut token cost."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Bashar Kellawi", email = "BasharKilawe@gmail.com" }]
+keywords = [
+    "llm", "tokenization", "inference-cost", "machine-translation",
+    "cost-aware-routing", "japanese", "arabic", "openai", "gpt", "api-cost",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+openai = ["tiktoken>=0.7"]
+dev = ["pytest>=8", "build", "twine", "pip-audit"]
+
+[project.urls]
+Homepage = "https://github.com/Kellawi/langpivot"
+Repository = "https://github.com/Kellawi/langpivot"
+Issues = "https://github.com/Kellawi/langpivot/issues"
+
+[tool.hatch.version]
+path = "langpivot/__init__.py"
+
+# Ship only source, tests, and the two metadata files in the sdist —
+# never data/ (corpora) or paper/ (the academic manuscript).
+[tool.hatch.build.targets.sdist]
+include = ["langpivot/", "tests/", "README.md", "LICENSE", "pyproject.toml"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["langpivot"]
+
+# Force-include the bundled model weights even though repo-root data/ is
+# git-ignored (the package copy lives at langpivot/data/, not the ignored
+# top-level data/).
+[tool.hatch.build]
+artifacts = ["langpivot/data/predictor_weights.json"]
